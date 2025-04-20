@@ -1,0 +1,5 @@
+Global seed set to 7
+Some weights of GPTForPrompt were not initialized from the model checkpoint at gpt2 and are newly initialized: ['h.11.attn.masked_bias', 'lm_head.weight', 'h.10.attn.masked_bias', 'multiple_choice_head.summary.weight', 'h.6.attn.masked_bias', 'h.5.attn.masked_bias', 'multiple_choice_head.summary.bias', 'h.8.attn.masked_bias', 'h.1.attn.masked_bias', 'h.0.attn.masked_bias', 'h.2.attn.masked_bias', 'h.4.attn.masked_bias', 'h.7.attn.masked_bias', 'h.9.attn.masked_bias', 'h.3.attn.masked_bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+wandb: Currently logged in as: yatoka233 (team-tes). Use `wandb login --relogin` to force relogin
+slurmstepd: error: *** JOB 53861506 ON gl1519 CANCELLED AT 2023-05-28T23:26:20 ***

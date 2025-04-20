@@ -1,0 +1,13 @@
+module spider cuda
+Versions:
+        cuda/10.2.89
+        cuda/11.2.2
+        cuda/11.3.0
+        cuda/11.5.1
+        cuda/11.6.2
+        cuda/11.7.1
+        cuda/11.8.0
+
+1. 命令行conda activate env
+2. module load cuda/11.6.2
+3. sbatch run.sh
