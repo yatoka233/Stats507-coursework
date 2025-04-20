@@ -1,0 +1,30 @@
+/home/rickyhan/.local/lib/python3.9/site-packages/dgl/dataloading/dataloader.py:1076: DGLWarning: Dataloader CPU affinity opt is not enabled, consider switching it on (see enable_cpu_affinity() or CPU best practices for DGL [https://docs.dgl.ai/tutorials/cpu/cpu_best_practises.html])
+  dgl_warning(
+1.1.1
+True
+cuda:0
+Traceback (most recent call last):
+  File "/nfs/turbo/umms-drjieliu/proj/prompt_re/kg_embeddings/train_hgt_lp_binary.py", line 135, in <module>
+    blocks = [b.to(device) for b in blocks]
+  File "/nfs/turbo/umms-drjieliu/proj/prompt_re/kg_embeddings/train_hgt_lp_binary.py", line 135, in <listcomp>
+    blocks = [b.to(device) for b in blocks]
+  File "/home/rickyhan/.local/lib/python3.9/site-packages/dgl/heterograph.py", line 5709, in to
+    ret._graph = self._graph.copy_to(utils.to_dgl_context(device))
+  File "/home/rickyhan/.local/lib/python3.9/site-packages/dgl/heterograph_index.py", line 255, in copy_to
+    return _CAPI_DGLHeteroCopyTo(self, ctx.device_type, ctx.device_id)
+  File "dgl/_ffi/_cython/./function.pxi", line 295, in dgl._ffi._cy3.core.FunctionBase.__call__
+  File "dgl/_ffi/_cython/./function.pxi", line 227, in dgl._ffi._cy3.core.FuncCall
+  File "dgl/_ffi/_cython/./function.pxi", line 217, in dgl._ffi._cy3.core.FuncCall3
+dgl._ffi.base.DGLError: [16:34:05] /opt/dgl/src/runtime/c_runtime_api.cc:82: Check failed: allow_missing: Device API cuda is not enabled. Please install the cuda version of dgl.
+Stack trace:
+  [bt] (0) /home/rickyhan/.local/lib/python3.9/site-packages/dgl/libdgl.so(dmlc::LogMessageFatal::~LogMessageFatal()+0x75) [0x14a5c98cf4e5]
+  [bt] (1) /home/rickyhan/.local/lib/python3.9/site-packages/dgl/libdgl.so(dgl::runtime::DeviceAPIManager::GetAPI(std::string, bool)+0x1f2) [0x14a5c9c4f9e2]
+  [bt] (2) /home/rickyhan/.local/lib/python3.9/site-packages/dgl/libdgl.so(dgl::runtime::DeviceAPI::Get(DGLContext, bool)+0x1e1) [0x14a5c9c49f91]
+  [bt] (3) /home/rickyhan/.local/lib/python3.9/site-packages/dgl/libdgl.so(dgl::runtime::NDArray::Empty(std::vector<long, std::allocator<long> >, DGLDataType, DGLContext)+0x13b) [0x14a5c9c6cebb]
+  [bt] (4) /home/rickyhan/.local/lib/python3.9/site-packages/dgl/libdgl.so(dgl::runtime::NDArray::CopyTo(DGLContext const&) const+0xc3) [0x14a5c9ca7213]
+  [bt] (5) /home/rickyhan/.local/lib/python3.9/site-packages/dgl/libdgl.so(dgl::UnitGraph::CopyTo(std::shared_ptr<dgl::BaseHeteroGraph>, DGLContext const&)+0x3ef) [0x14a5c9db4b8f]
+  [bt] (6) /home/rickyhan/.local/lib/python3.9/site-packages/dgl/libdgl.so(dgl::HeteroGraph::CopyTo(std::shared_ptr<dgl::BaseHeteroGraph>, DGLContext const&)+0xf6) [0x14a5c9cb8676]
+  [bt] (7) /home/rickyhan/.local/lib/python3.9/site-packages/dgl/libdgl.so(+0x52dfa6) [0x14a5c9cc7fa6]
+  [bt] (8) /home/rickyhan/.local/lib/python3.9/site-packages/dgl/libdgl.so(DGLFuncCall+0x48) [0x14a5c9c4efa8]
+
+
